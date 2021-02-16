@@ -1,0 +1,26 @@
+{% extends '@EasyAdmin/page/content.html.twig'%}
+
+{#
+ici on va chercher le fichier dans :
+vendor/easycorp/easyadmin-bundle/src/ressources/views/
+#}
+
+{% block page_content %}
+    <h1 class="text-center mb-4">Hello {{ app.user.username }},</h1>
+
+   <div class="row">
+       <div class="col-lg-4 text-center">
+           <h2>Nombres d'utilisateur</h2>
+           <h2>{{ userCount }}</h2>
+       </div>
+       <div class="col-lg-4 text-center">
+           <h2>Nombres d'annonces</h2>
+           <h2>{{ realEstateCount }}</h2>
+       </div>
+       <div class="col-lg-4 text-center">
+           <h2>Nombres d'annonce</h2>
+           <h2>{{ realEstateCount }}</h2>
+       </div>
+   </div>
+
+{% endblock %}

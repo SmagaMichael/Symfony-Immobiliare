@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{# Ajoute le doctype à cette page #}
+
+
+{# <!-- précise dans quel block on met le contenu voulu --> #}
+{% block body %}
+    <h1>Voir la liste des annonces</h1>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <form action="" method="get">
+                <input type="number" class="form-control mb-3" placeholder="Surface minimum" name="surface"
+                       value="{{ app.request.get('surface') }}">
+                <input type="number" class="form-control mb-3" placeholder="Budget maximum" name="budget"
+                       value="{{ app.request.get('budget') }}">
+
+                <select class="form-control mb-3" name="size">
+                    <option value="" disabled {{ app.request.get('size') == null ? 'selected' }}>Nombre de pièces</option>
+                    {% for size in sizes%}
+                        <option value="{{ loop.index }}"{{ loop.index == app.request.get('size') ? 'selected' }}>{{ size }}</option>
+                    {% endfor %}
+
+                </select>
+
+                <button class="btn btn-primary btn-block">Filter</button>
+            </form>
+        </div>
+
+
+
+        <div class="col-lg-9">
+            <div class="row">
+                {% for property in properties  %}
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <a href="{{ path('property_show', {slug: property.title}) }}">
+                                {{ property.title }}
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br/>
+    </div>
+
+    <br/>
+    <button id="ajax-properties" class="btn btn-dark">Appel Ajax</button>
+
+
+
+{% endblock %}

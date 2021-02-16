@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Voir une annonce {{ slug }}
+
+    <br/> <br/>
+
+    {# On met la lettre dans une balise <strong> une fois sur 2 #}
+    {# la filtre raw permet d'interpreter le HTML #}
+    {# loop permet de récupérer des infos sur la boucle #}
+    {# Raw permet d'enlever la sécurité pour qu'il interprete les balises  #}
+    {% for letter in 'a'..'z' %}
+        {{ cycle(['<strong>', '<span>'], loop.index) | raw }}
+            {{ letter | upper | lower | upper }}
+        {{ cycle(['</strong>', '</span>'], loop.index) | raw }}
+    {% endfor %}
+
+
+{% endblock %}
+
+

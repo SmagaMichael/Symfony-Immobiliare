@@ -1,0 +1,94 @@
+body{
+    background-image:url(../img/image_test/16.png);
+    background-size:cover;
+    background-color:#00b8ff;
+
+}
+
+
+.logo{
+    width:auto;
+    height:60px;
+}
+.logoSearch{
+    width:auto;
+    height:60px;
+    background-color:#0197fd;
+    padding: 5px;
+    border-radius:10px;
+
+}
+
+.property-price{
+    font-weight:700;
+}
+
+/* Accueil */
+.cover{
+    box-shadow: 0 2px 11px 4px rgba(255,255,255,1);
+    background-color: #ffffff80;
+    border: 1px solid white;
+    background-image:url(../img/logo/LogoHouseBlue.png);;
+    background-repeat:no-repeat;
+    background-size: 400px auto;
+    background-position:center;
+    margin-bottom:30px;
+}
+
+.Last3{
+
+    background-color: #ffffffe0;
+    text-align:center;
+
+
+}
+.Last3Card{
+    display: flex;
+    justify-content: center;
+}
+
+/* Toutes les annonces */
+
+.SortBy{
+    background-color: white;
+    height:100% ;
+    padding-bottom:15px;
+    padding-top:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+}
+
+.CheckHouse{
+    width:260px;
+    height:auto;
+}
+
+.TitleAllHouse{
+    background-color: white;
+    border-radius:10px;
+    padding:10px;
+}
+
+
+.AllCardImage{
+    object-fit: cover  ;
+    height: 300px ;
+}
+
+/*Show One house*/
+.OneHouseImg{
+    margin:15px;
+    border:1px solid #ffffff;
+    box-shadow: 0 2px 11px 4px rgba(255,255,255,1);
+
+}
+
+.sold{
+    width:150px;
+    position:absolute;
+}
+
+.Onesold{
+    width:150px;
+    position:absolute;
+}

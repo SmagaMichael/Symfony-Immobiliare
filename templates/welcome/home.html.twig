@@ -1,0 +1,56 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+    <div class="BG_home">
+        <div class="cover">
+            <br/><br/><br/><br/><br/>
+            <h1 class="text-center mb-5">Michaël Agency</h1>
+
+            <p class="text-center">Notre agence vous accompagne dans tous vos projets immobiliers</p>
+
+            {# Dans symfony on a accés à une variable globale app#}
+            {# dump(app) #}
+
+            {# pour récupérer la route actuelle #}
+            <p class="text-center">Vous êtes ici sur la {{ app.request.get('_route') }} ;)</p>
+        </div>
+
+        <div class="Last3 p-4">
+            <h3>Voici nos 3 dernières annonces </h3>
+            <div class="row Last3Card">
+
+                <div class="card col-lg-3 m-2">
+                    <img class="card-img" src="" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="">Annonce 1</a> </h5>
+                        <p class="card-text">pièces</p>
+                        <p class="card-text property-price"> €</p>
+                    </div>
+                </div>
+
+                <div class="card col-lg-3 m-2">
+                    <img class="card-img" src="" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="">Annonce 2</a></h5>
+                        <p class="card-text">pièces</p>
+                        <p class="card-text property-price"> €</p>
+                    </div>
+                </div>
+
+
+                <div class="card col-lg-3 m-2">
+                    <img class="card-img" src="" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="">Annonce 3</a></h5>
+                        <p class="card-text">pièces</p>
+                        <p class="card-text property-price"> €</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+{% endblock %}
