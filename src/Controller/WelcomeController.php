@@ -3,7 +3,7 @@
 
 namespace App\Controller;
 
-
+use App\Repository\RealEstateRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,7 +32,12 @@ class WelcomeController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function home(): Response{
-        return $this->render('welcome/home.html.twig');
+    public function home(RealEstateRepository $realEstateRepository): Response{
+
+        $last3Product = $realEstateRepository->FindLastThreeID();
+
+        return $this->render('welcome/home.html.twig',[
+            'last3ID' => $last3Product,
+        ]);
     }
 }

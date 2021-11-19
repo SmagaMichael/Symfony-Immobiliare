@@ -1,0 +1,30 @@
+/* Toutes les annonces */
+body{
+    background: linear-gradient(0.25turn, #00b8ff, #ffffff, #00b8ff);
+}
+        
+.SortBy{
+    background-color: white;
+    height:100% ;
+    padding-bottom:15px;
+    padding-top:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+}
+
+.CheckHouse{
+    width:260px;
+    height:auto;
+}
+
+.TitleAllHouse{
+    background-color: white;
+    border-radius:10px;
+    padding:10px;
+}
+
+
+.AllCardImage{
+    object-fit: cover  ;
+    height: 300px ;
+}

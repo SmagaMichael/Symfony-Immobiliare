@@ -5,11 +5,19 @@
     <script src="{{asset('js/search.js')}}"></script>
 {% endblock %}
 
+{% block stylesheets %}
+    {{parent()}}
+       <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+{% endblock %}
+
 {% block body %}
 
+{% if app.user %}
     <div class="col-lg-2 offset-lg-5">
         <a href="{{ path('real_estate_create')}}" class="btn btn-primary">Créer une annonce</a>
     </div>
+{% endif %}
+
 
     <div class="row pt-4">
         <div class="col-lg-12">

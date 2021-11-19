@@ -1,0 +1,28 @@
+body{
+    background-image:url(../img/image_test/16.png);
+    background-size:cover;
+    background-color:#00b8ff;
+}
+
+/* Accueil */
+.cover{
+    box-shadow: 0 2px 11px 4px rgba(255,255,255,1);
+    background-color: #ffffff80;
+    border: 1px solid white;
+    background-image:url(../img/logo/LogoHouseBlue.png);;
+    background-repeat:no-repeat;
+    background-size: 400px auto;
+    background-position:center;
+    margin-bottom:30px;
+}
+
+.Last3{
+
+    background-color: #ffffffe0;
+    text-align:center;
+}
+
+.Last3Card{
+    display: flex;
+    justify-content: center;
+}

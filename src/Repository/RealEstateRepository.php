@@ -54,6 +54,16 @@ class RealEstateRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    public function FindLastThreeID()
+    {
+        return $this->createQueryBuilder('o')
+            ->orderBy('o.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     // /**
     //  * @return RealEstate[] Returns an array of RealEstate objects

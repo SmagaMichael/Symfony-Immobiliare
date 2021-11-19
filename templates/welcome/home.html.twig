@@ -1,56 +1,57 @@
 {% extends 'base.html.twig'%}
 
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
 {% block body %}
-    <div class="BG_home">
-        <div class="cover">
-            <br/><br/><br/><br/><br/>
-            <h1 class="text-center mb-5">Michaël Agency</h1>
+	<div class="BG_home">
+		<div class="cover">
+			<br/><br/><br/><br/><br/>
+			<h1 class="text-center mb-5">Michaël Agency</h1>
 
-            <p class="text-center">Notre agence vous accompagne dans tous vos projets immobiliers</p>
+			<p class="text-center">Notre agence vous accompagne dans tous vos projets immobiliers</p>
 
-            {# Dans symfony on a accés à une variable globale app#}
-            {# dump(app) #}
+			{# Dans symfony on a accés à une variable globale app#}
+			{# dump(app) #}
 
-            {# pour récupérer la route actuelle #}
-            <p class="text-center">Vous êtes ici sur la {{ app.request.get('_route') }} ;)</p>
-        </div>
+			{# pour récupérer la route actuelle #}
+				<p class="text-center"> Vous êtes ici sur la
+				{{ app.request.get('_route') }}
+				;)</p>
+		</div>
 
-        <div class="Last3 p-4">
-            <h3>Voici nos 3 dernières annonces </h3>
-            <div class="row Last3Card">
+		<div class="Last3 p-4">
+			<h3>Voici nos 3 dernières annonces
+			</h3>
+			<div class="row Last3Card">
 
-                <div class="card col-lg-3 m-2">
-                    <img class="card-img" src="" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="">Annonce 1</a> </h5>
-                        <p class="card-text">pièces</p>
-                        <p class="card-text property-price"> €</p>
-                    </div>
-                </div>
+				{% for property in last3ID %}
+					<div class="col-lg-4">
+						<div class=" card mb-4">
+							<img class=" AllCardImage" src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{ path('real_estate_show', {slug: property.slug, id: property.id}) }}">
+										{{  property.title }}
+									</a>
+								</h5>
+								<p class="card-text">{{ property.surface}}m² -
+									{{ property.rooms }}
+									pièces</p>
+								<p class="card-text property-price">{{ property.price}}
+									€</p>
 
-                <div class="card col-lg-3 m-2">
-                    <img class="card-img" src="" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="">Annonce 2</a></h5>
-                        <p class="card-text">pièces</p>
-                        <p class="card-text property-price"> €</p>
-                    </div>
-                </div>
+								<a class="btn btn-primary" href="{{ path('real_estate_edit', {id: property.id}) }}">Modifier</a>
+								<a class="btn btn-danger" href="{{ path('real_estate_delete', {id: property.id}) }}">Supprimer</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 
-
-                <div class="card col-lg-3 m-2">
-                    <img class="card-img" src="" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="">Annonce 3</a></h5>
-                        <p class="card-text">pièces</p>
-                        <p class="card-text property-price"> €</p>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>
+		</div>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</div>
 {% endblock %}

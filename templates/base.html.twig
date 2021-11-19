@@ -30,9 +30,9 @@
                     </li>
 
                     {# ou cette syntaxe pour l'active #}
-                    <li class="nav-item {% if app.request.get('_route') == 'hello' %}active{% endif %}">
+                    {# <li class="nav-item {% if app.request.get('_route') == 'hello' %}active{% endif %}">
                         <a class="nav-link" href="{{ path('hello') }}">Hello</a>
-                    </li>
+                    </li> #}
                 </ul>
 
                 <form method="get" class="form-inline">
@@ -66,9 +66,9 @@
                         </li>
                     {%endif %}
 
-                    <li class="nav-item active">
+                    {# <li class="nav-item active">
                         <a class="btn" href="{{ path('cart_index') }}">Panier ({{ cart.count }})</a>
-                    </li>
+                    </li> #}
                 </ul>
             </div>
         </div>
@@ -106,8 +106,8 @@
 
 
     {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" ></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
     {% endblock %}
 
