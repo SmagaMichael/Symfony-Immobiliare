@@ -1,21 +1,24 @@
-
-
 {% for property in properties  %}
-    <div class="col-lg-4">
-        <div class=" card mb-4">
-            <img class=" AllCardImage" src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="{{ path('real_estate_show', {slug: property.slug, id: property.id}) }}">
-                        {{  property.title }}
-                    </a>
-                </h5>
-                <p class="card-text">{{ property.surface}}m² - {{ property.rooms }} pièces</p>
-                <p class="card-text property-price">{{ property.price}} €</p>
+	<div class="col-lg-4 p-2">
+		<div class=" card mb-4">
+			<img class=" AllCardImage" src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
+			<div class="card-body">
+				<h5 class="card-title">
+					<a href="{{ path('real_estate_show', {slug: property.slug, id: property.id}) }}">
+						{{  property.title }}
+					</a>
+				</h5>
+				<p class="card-text">{{ property.surface}}m² -
+					{{ property.rooms }}
+					pièces</p>
+				<p class="card-text property-price">{{ property.price}}
+					€</p>
 
-                <a class="btn btn-primary" href="{{ path('real_estate_edit', {id: property.id}) }}">Modifier</a>
-                <a class="btn btn-danger" href="{{ path('real_estate_delete', {id: property.id}) }}">Supprimer</a>
-            </div>
-        </div>
-    </div>
+				{%  if app.user == property.owner %}
+					<a class="btn btn-primary" href="{{ path('real_estate_edit', {id: property.id}) }}">Modifier</a>
+					<a class="btn btn-danger" href="{{ path('real_estate_delete', {id: property.id}) }}">Supprimer</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 {% endfor %}

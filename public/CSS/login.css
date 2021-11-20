@@ -2,20 +2,9 @@ body{
     background: linear-gradient(0.25turn, #00b8ff, #ffffff, #00b8ff);
 }
 
-/*Show One house*/
-.OneHouseImg{
-    border:1px solid #ffffff;
-    box-shadow: 0 2px 11px 4px rgba(255,255,255,1);
-
-}
-
-.Onesold{
-    width:150px;
-    position:absolute;
-}
-
 h1{
     text-align: center;
+    margin: 10px;
 }
 
 footer{

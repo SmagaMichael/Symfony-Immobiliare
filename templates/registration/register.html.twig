@@ -2,6 +2,11 @@
 
 {% block title %}Inscription - {{ parent() }}{% endblock %}
 
+{% block stylesheets %}
+    {{parent()}}
+       <link rel="stylesheet" href="{{ asset('CSS/login.css') }}">
+{% endblock %}
+
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -16,7 +21,7 @@
 
         }) }}
         {{ form_row(registrationForm.agreeTerms,{
-            label: 'J\'accept les CGU',
+            label: 'J\'accepte les CGU',
         }) }}
 
         <button type="submit" class="btn btn-primary">S'inscrire</button>

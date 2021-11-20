@@ -39,7 +39,6 @@
                     {% for size in sizes%}
                         <option value="{{ loop.index }}"{{ loop.index == app.request.get('size') ? 'selected' }}>{{ size }}</option>
                     {% endfor %}
-
                 </select>
 
                 <button class="btn btn-primary btn-block">Filter</button>
@@ -49,7 +48,7 @@
         <div class="col-lg-9">
             <div class="row" id="real-estate-list">
                 {% for property in properties  %}
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 p-2">
                         <div class=" card mb-4">
 
                             {% if property.sold %}

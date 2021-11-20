@@ -28,8 +28,8 @@
 			<div class="row Last3Card">
 
 				{% for property in last3ID %}
-					<div class="col-lg-4">
-						<div class=" card mb-4">
+					<div class="col-lg-4 p-2">
+						<div class=" card">
 							<img class=" AllCardImage" src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
 							<div class="card-body">
 								<h5 class="card-title">
@@ -43,15 +43,16 @@
 								<p class="card-text property-price">{{ property.price}}
 									€</p>
 
-								<a class="btn btn-primary" href="{{ path('real_estate_edit', {id: property.id}) }}">Modifier</a>
-								<a class="btn btn-danger" href="{{ path('real_estate_delete', {id: property.id}) }}">Supprimer</a>
+								{% if app.user == property.owner %}
+									<a class="btn btn-primary" href="{{ path('real_estate_edit', {id: property.id}) }}">Modifier</a>
+									<a class="btn btn-danger" href="{{ path('real_estate_delete', {id: property.id}) }}">Supprimer</a>
+								{% endif %}
 							</div>
 						</div>
 					</div>
 				{% endfor %}
 			</div>
-
 		</div>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
 	</div>
 {% endblock %}

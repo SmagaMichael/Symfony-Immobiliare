@@ -28,3 +28,7 @@ body{
     object-fit: cover  ;
     height: 300px ;
 }
+
+.card{
+    height: 100% !important;
+}

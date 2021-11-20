@@ -1,77 +1,69 @@
 {% extends 'base.html.twig'%}
 
 {% block stylesheets %}
-    {{parent()}}
-       <link rel="stylesheet" href="{{ asset('css/one.css') }}">
+	{{parent()}}
+	<link rel="stylesheet" href="{{ asset('css/one.css') }}">
 {% endblock %}
 
 {% block body %}
 
 
-    <div class="row pt-4">
-        <div class="col-lg-6">
-            {% if property.sold %}
-                <img src="{{ asset('img/logo/sold.png') }}" alt="sold" class="Onesold">
-            {% endif %}
-            <img class="img-fluid OneHouseImg"  src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
-        </div>
+	<div class="row pt-4 mb-5">
 
-        <div class="col-lg-6">
-            <h1>{{ title }}</h1>
-            <p class="card-text">
-                {{ property.surface}}m² - {{ property.rooms }} pièce(s)
-            </p>
+		<h1 class="col-lg-12 mb-5">{{ title }}</h1>
 
-            <p class="property-price text-primary">
-                <strong>
-                    {{ property.price }} €
-                </strong>
-            </p>
-            <a href="{{ path('cart_add', {id: property.id}) }}" class="btn btn-primary btn-block">Ajouter au panier</a>
-        </div>
-    </div>
+		<div class="col-lg-6">
+			{% if property.sold %}
+				<img src="{{ asset('img/logo/sold.png') }}" alt="sold" class="Onesold">
+			{% endif %}
+			<img class="img-fluid OneHouseImg" src="{{ asset('img/uploads/' ~ property.image) }}" alt="{{ property.title }}">
+		</div>
 
+		<div
+			class="col-lg-6">
+			{# {{ property.surface}}m² - {{ property.rooms }} pièce(s) #}
+			<table class="table table-light ">
+				<thead class="thead-dark">
+					<tr>
+						<th>Caractéristiques</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Surface habitables</td>
+						<td>{{ property.surface }}
+							m²
+						</td>
+					</tr>
+					<tr>
+						<td>Nombre de pièces</td>
+						<td>{{ property.rooms }}
+							({{ property.displayableRooms }})
+						</td>
+					</tr>
+					<tr>
+						<td>Type de bien</td>
+						<td>{{ property.type.name }}
+						</td>
+					</tr>
+					<tr>
+						<td>Prix</td>
+						<td>
+							<strong>
+								{{ property.price }}
+								€
+							</strong>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
+			<p class="property-price text-primary"></p>
+			<a href="{{ path('cart_add', {id: property.id}) }}" class="btn btn-primary btn-block">Ajouter au panier</a>
+		</div>
 
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <table class="table table-light ">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Caractéristiques</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Surface habitables</td>
-                        <td>{{ property.surface }} m² </td>
-                    </tr>
-                    <tr>
-                        <td>Nombre de pièces</td>
-                        <td>{{ property.rooms }} ({{ property.displayableRooms }}) </td>
-                    </tr>
-                    <tr>
-                        <td>Type de bien</td>
-                        <td>{{ property.type.name }} </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+	</div>
 
 
 {% endblock %}

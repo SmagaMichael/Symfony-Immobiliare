@@ -4,6 +4,10 @@ body{
     background-color:#00b8ff;
 }
 
+.BG_home{
+    margin-bottom: 5vw;
+}
+
 /* Accueil */
 .cover{
     box-shadow: 0 2px 11px 4px rgba(255,255,255,1);
@@ -25,4 +29,25 @@ body{
 .Last3Card{
     display: flex;
     justify-content: center;
+}
+
+.card{
+    height: 100% !important;
+    margin: 10px 10px;
+    padding: 10px;
+}
+
+.AllCardImage{
+    height: 50%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3vw;
+    padding: 10px;
 }
