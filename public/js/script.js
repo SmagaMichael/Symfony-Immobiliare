@@ -19,11 +19,12 @@ $('#real_estate_surface').on('input', function() {
     $(this).after('<div id="result">'+$(this).val()+'m²</div>')
 });
 
+
+
+
 $('[type="file"]').on('change', function(){
     let label = $(this).val().split('\\').pop();
     $(this).next().text(label);
-
-
 
     let reader = new FileReader();
     reader.addEventListener('load', function(file){
