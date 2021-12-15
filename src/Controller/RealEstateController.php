@@ -92,7 +92,7 @@ class RealEstateController extends AbstractController
             // Ici, on va ajouter l'annonce dans la base...
             // $form->getData() permet de récupérer les données d'un formulaire
             // $realEstate est la même chose que $form->getData()
-            dump($realEstate);
+            // dump($realEstate);
             // On génére le slug et on fait l'upload avant l'ajout en base
             $slug = $slugger->slug($realEstate->getTitle())->lower(); // Le nom de l'annonce devient le-nom-de-l-annonce
             $realEstate->setSlug($slug);
